@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IAPAN</title>
+  <link rel="stylesheet" href="test.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="icon" type="image/png" href="Skull_and_Crossbones.svg.png">
+</head>
+<body>
+  <div class="container">
+    <!-- Border atas dengan pola hazard -->
+    <div class="hazard-stripe-top"></div>
+    
+    <!-- Header Section -->
+    <header class="header">
+      <div class="logo-container">
+        <div class="logo-diamond-outer spin"></div>
+        <div class="logo-diamond-inner"></div>
+        <i class="fas fa-skull logo-icon pulse-glow"></i>
+      </div>
+      
+      <h1 class="main-title">COOMIN SOON</h1>
+      <h2 class="sub-title">(OCA) ORENTASI CALON ALUMNI</h2>
+      <div class="header-line"></div>
+      <p class="header-tag">FREE PRESENTATION</p>
+      <p class="header-tag">(18/04/2025)</p>
+    </header>
+
+    <div class="mt-16 mb-12 space-y-12 container-animation">
+        <div class="item-animation">
+          <!-- Countdown Timer Container -->
+          <div class="countdown-container">
+            <div class="countdown-box">
+              <span id="days" class="countdown-value">00</span>
+              <span class="countdown-label">HARI</span>
+            </div>
+            <div class="countdown-box">
+              <span id="hours" class="countdown-value">00</span>
+              <span class="countdown-label">JAM</span>
+            </div>
+            <div class="countdown-box">
+              <span id="minutes" class="countdown-value">00</span>
+              <span class="countdown-label">MENIT</span>
+            </div>
+            <div class="countdown-box">
+              <span id="seconds" class="countdown-value">00</span>
+              <span class="countdown-label">DETIK</span>
+            </div>
+          </div>
+        </div>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <h2 class="section-title fade-in">PROGRAM (OCA)</h2>
+      
+      <div class="cards-container fade-in">
+        <div class="hazard-card">
+          <div class="card-icon">
+            <i class="fas fa-skull"></i>
+          </div>
+          <h3>Membangun Pemimpin Berintegritas</h3>
+          <p>Program ini bertujuan mencetak kader yang memiliki nilai kepemimpinan kuat, jujur,</p>
+          <button class="card-button">PELAJARI</button>
+          <div class="extra-text">
+            <ul>
+                <p>dan bertanggung jawab. Setiap anggota dilatih untuk berpikir kritis, mengambil keputusan bijak, serta berkontribusi
+                  positif bagi organisasi dan masyarakat.</p>
+            </ul>
+        </div>
+        </div>
+        
+        <div class="hazard-card">
+          <div class="card-icon">
+            <i class="fas fa-skull"></i>
+          </div>
+          <h3>Membangun Solidaritas: Kader yang Saling Mendukung dan Menguatkan</h3>
+          <p>Program pengkaderan ini berfokus pada penguatan nilai-nilai integritas, etika, dan tanggung jawab dalam berorganisasi.</p>
+          <button class="card-button">PELAJARI</button>
+          <div class="extra-text">
+            <ul>
+                <p>Anggota diharapkan memiliki sikap jujur, adil, dan transparan dalam setiap tindakan yang diambil demi kemajuan organisasi dan masyarakat sekitar.</p>
+            </ul>
+        </div>
+        </div>
+        
+        <div class="hazard-card">
+          <div class="card-icon">
+            <i class="fas fa-skull"></i>
+          </div>
+          <h3>Membangun Integritas dan Etika</h3>
+          <p>Langkah-langkah untuk menangani bahan berbahaya dengan aman</p>
+          <button class="card-button">PELAJARI</button>
+          <div class="extra-text">
+            <ul>
+                <p>anggota akan diajarkan untuk saling mendukung, berbagi pengetahuan,
+                   dan memperkuat satu sama lain dalam menjalankan tugas dan mencapai tujuan bersama.</p>
+            </ul>
+        </div>
+        </div>
+      </div>
+
+      <div class="cta-container fade-in">
+        <div class="cta-box">
+          <h3>DITUNGGU KEHADIRANNYA</h3>
+          <p>Program ini dirancang sebagai wadah bagi Anda untuk berkembang, berinovasi, dan menjadi pribadi yang lebih tangguh serta visioner.</p>
+          <button class="cta-button">DAFTAR PELATIHAN</button>
+        </div>
+      </div>
+    </main>
+
+    <!-- Efek grunge overlay -->
+    <div class="grunge-overlay"></div>
+    
+    <!-- Border bawah dengan pola hazard -->
+    <div class="hazard-stripe-bottom"></div>
+    
+    <!-- Footer Section -->
+    <footer class="footer">
+      <div class="footer-content">
+        <div class="copyright">
+          <p>&copy; 2025 ORENTASI CALON ALUMNI</p>
+        </div>
+        
+        <div class="footer-links">
+          <a href="#">Kebijakan Privasi</a>
+          <a href="#">Syarat & Ketentuan</a>
+          <a href="#">Kontak</a>
+        </div>
+      </div>
+    </footer>
+    </div>
+  </div>
+
+  <script src="test.js"></script>
+      
+  <script>
+  function startCountdown(targetDate) {
+    function updateCountdown() {
+        const now = new Date();
+        const difference = targetDate - now;
+
+        if (difference < 0) {
+            document.getElementById("days").textContent = "00";
+            document.getElementById("hours").textContent = "00";
+            document.getElementById("minutes").textContent = "00";
+            document.getElementById("seconds").textContent = "00";
+            clearInterval(interval);
+            return;
+        }
+
+        const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+        document.getElementById("days").textContent = String(days).padStart(2, '0');
+        document.getElementById("hours").textContent = String(hours).padStart(2, '0');
+        document.getElementById("minutes").textContent = String(minutes).padStart(2, '0');
+        document.getElementById("seconds").textContent = String(seconds).padStart(2, '0');
+    }
+    
+    updateCountdown();
+    const interval = setInterval(updateCountdown, 1000);
+}
+
+// Atur target waktu
+const countdownDate = new Date("2025-04-18T00:00:00"); // Sesuaikan dengan tanggal target
+startCountdown(countdownDate);
+</script>
+</body>
+</html>

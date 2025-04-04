@@ -1,0 +1,448 @@
+@font-face {
+  font-family: "horor";
+  src: url("/Film\ Horor.otf");
+}
+
+/* Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Arial', sans-serif;
+    color: red;
+    overflow-x: hidden;
+    background-image: url('/horor.png');
+  }
+  
+  .container {
+    min-height: 100vh;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  /* Hazard Stripes */
+  .hazard-stripe-top,
+  .hazard-stripe-bottom {
+    height: 32px;
+    width: 100%;
+    background-image: repeating-linear-gradient(
+      45deg,
+      #FFD700,
+      #FFD700 10px,
+      #121212 10px,
+      #121212 20px
+    );
+  }
+  
+  /* Header Styles */
+  .header {
+    text-align: center;
+    padding: 32px 0;
+  }
+  
+  .logo-container {
+    position: relative;
+    width: 160px;
+    height: 160px;
+    margin: 0 auto 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .logo-diamond-outer {
+    width: 144px;
+    height: 144px;
+    border: 4px solid #FFD700;
+    position: absolute;
+    transform: rotate(45deg);
+  }
+  
+  .logo-diamond-inner {
+    width: 144px;
+    height: 144px;
+    border: 4px solid #FFD700;
+    position: absolute;
+  }
+  
+  .logo-icon {
+    color: #FFD700;
+    font-size: 96px;
+    z-index: 10;
+    text-shadow: 0 0 15px rgba(255, 215, 0, 0.8), 
+    0 0 30px rgba(255, 215, 0, 0.6),
+    0 0 45px rgba(255, 215, 0, 0.4);
+    animation: glow 0.5s infinite alternate;
+  }
+
+  @keyframes glow {
+    0% {
+        text-shadow: 0 0 10px rgba(255, 215, 0, 0.6), 
+                     0 0 20px rgba(255, 215, 0, 0.4), 
+                     0 0 30px rgba(255, 215, 0, 0.2);
+    }
+    100% {
+        text-shadow: 0 0 15px rgba(255, 215, 0, 0.9), 
+                     0 0 30px rgba(255, 215, 0, 0.7), 
+                     0 0 45px rgba(255, 215, 0, 0.5);
+    }
+ }
+  
+  .main-title {
+    font-family: 'horor';
+    font-size: 89px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    color: #FFD700;
+    text-shadow: 0 0 90px rgba(255, 215, 0, 0.7);
+    margin-bottom: 8px;
+  }
+  
+  .sub-title {
+    font-family: 'horor';
+    font-size: 79px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    color: #FFD700;
+    text-shadow: 0 0 90px rgba(255, 215, 0, 0.7);
+  }
+  
+  .header-line {
+    border-radius: 50px;
+    height: 6px;
+    background-color: #FFD700;
+    width: 59%;
+    margin: 24px auto;
+    text-shadow: 0 0 90px rgba(255, 215, 0, 0.7);
+  }
+  
+  .header-tag {
+    font-family: 'horor';
+    color: #FF0000;
+    font-weight: bold;
+    font-size: 50px;
+    margin-top: 16px;
+    text-shadow: 0 0 15px rgba(255, 2, 2, 0.8),
+    0 0 30px rgba(255, 2, 2, 0.6),
+    0 0 45px rgba(255, 2, 2, 0.4);
+    animation: glow-red 0.5s infinite alternate;
+  }
+
+  @keyframes glow-red {
+  0% {
+      text-shadow: 0 0 10px rgba(255, 2, 2, 0.6), 
+                   0 0 20px rgba(255, 2, 2, 0.4), 
+                   0 0 30px rgba(255, 2, 2, 0.2);
+  }
+  100% {
+      text-shadow: 0 0 15px rgba(255, 2, 2, 0.9), 
+                   0 0 30px rgba(255, 2, 2, 0.7), 
+                   0 0 45px rgba(255, 2, 2, 0.5);
+  }
+  }
+
+  .countdown-container {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.countdown-box {
+    background-color: black;
+    text-align: center;
+    background: transparent;
+    padding: 15px 20px;
+    border-radius: 10px;
+    min-width: 80px;
+    font-family: bold;
+    box-shadow: 0 0 0 rgba(255, 255, 255, 0.2);
+}
+
+.countdown-value {
+    display: block;
+    font-size: 2.5rem;
+    font-weight: 100;
+    color: #fb0000;
+    font-family: 'horor';
+}
+
+.countdown-label {
+    font-size: 2rem;
+    color: #ff0000;
+    font-family: 'horor';
+}
+
+
+  
+  /* Main Content Styles */
+  .main-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 64px 16px;
+  }
+  
+  .section-title {
+    text-align: center;
+    font-size: 36px;
+    color: #FFD700;
+    font-weight: bold;
+    margin-bottom: 32px;
+    text-shadow: 0 0 5px rgba(255, 215, 0, 0.7);
+  }
+  
+  /* Card Styles */
+  .cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 32px;
+    margin-bottom: 48px;
+  }
+  
+  .hazard-card {
+    background-color: rgba(0, 0, 0, 0.7);
+    border: 2px solid #FFD700;
+    padding: 24px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: transform 0.3s ease;
+    box-shadow: 0 0 15px rgba(255, 215, 0, 0.8), 
+    0 0 30px rgba(255, 215, 0, 0.6),
+    0 0 45px rgba(255, 215, 0, 0.4);
+    animation: box-card 0.5s infinite alternate;
+  }
+
+  @keyframes box-card {
+    0% {
+        box-shadow: 0 0 10px rgba(255, 215, 0, 0.6), 
+                     0 0 20px rgba(255, 215, 0, 0.4), 
+                     0 0 30px rgba(255, 215, 0, 0.2);
+    }
+    100% {
+        box-shadow: 0 0 15px rgba(255, 215, 0, 0.9), 
+                     0 0 30px rgba(255, 215, 0, 0.7), 
+                     0 0 45px rgba(255, 215, 0, 0.5);
+    }
+ }
+  
+  .hazard-card:hover {
+    transform: scale(1.03) translateY(-5px);
+  }
+  
+  .card-icon {
+    margin-bottom: 16px;
+    font-size: 48px;
+    color: #FFD700;
+  }
+  
+  .card-icon:hover {
+    animation: rotate 0.5s ease;
+  }
+  
+  .hazard-card h3 {
+    color: #FFD700;
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 12px;
+  }
+  
+  .hazard-card p {
+    margin-bottom: 16px;
+  }
+  
+  .card-button {
+    background-color: #FFD700;
+    color: black;
+    font-weight: 600;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .card-button:hover {
+    background-color: #f0c000;
+  }
+
+  .extra-text {
+    display: none; /* Mulai dalam keadaan tersembunyi */
+    margin-top: -15px;
+    text-align: center;
+    font-size: 16px;
+    color: red;
+ }
+
+
+  
+  /* CTA Section */
+  .cta-container {
+    text-align: center;
+  }
+  
+  .cta-box {
+    max-width: 768px;
+    margin: 0 auto;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 32px;
+    border: 1px solid #FFD700;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(255, 215, 0, 0.8), 
+    0 0 30px rgba(255, 215, 0, 0.6),
+    0 0 45px rgba(255, 215, 0, 0.4);
+    animation: box-card 0.5s infinite alternate;
+  }
+  
+  .cta-box h3 {
+    color: #FFD700;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 16px;
+  }
+  
+  .cta-box p {
+    margin-bottom: 24px;
+  }
+  
+  .cta-button {
+    background-color: #FFD700;
+    color: black;
+    font-weight: bold;
+    font-size: 18px;
+    padding: 16px 32px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+  
+  .cta-button:hover {
+    background-color: #f0c000;
+  }
+  
+  /* Footer Styles */
+  .footer {
+    background-color: black;
+    padding: 24px 16px;
+    position: relative;
+    z-index: 10;
+  }
+  
+  .footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .copyright {
+    margin-bottom: 16px;
+  }
+  
+  .copyright p {
+    color: #FFD700;
+    font-weight: 600;
+  }
+  
+  .footer-links {
+    display: flex;
+    gap: 24px;
+  }
+  
+  .footer-links a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+  
+  .footer-links a:hover {
+    color: #FFD700;
+  }
+  
+  /* Overlay Effect */
+  .grunge-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('grunge-texture.png');
+    opacity: 0.1;
+    pointer-events: none;
+  }
+  
+  /* Animations */
+  @keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(10deg); }
+  }
+  
+  .spin {
+    animation: spin 40s linear infinite;
+  }
+  
+  @keyframes spin {
+    from { transform: rotate(45deg); }
+    to { transform: rotate(405deg); }
+  }
+  
+  .pulse-glow {
+    animation: pulse 2s ease-in-out infinite;
+  }
+  
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.7; }
+  }
+  
+  .fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+  }
+  
+  /* Media Queries */
+  @media (min-width: 768px) {
+    .footer-content {
+      flex-direction: row;
+    }
+    
+    .copyright {
+      margin-bottom: 0;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .main-title {
+      font-size: 40px;
+    }
+    
+    .sub-title {
+      font-size: 36px;
+    }
+    
+    .logo-container {
+      width: 120px;
+      height: 120px;
+    }
+    
+    .logo-diamond-outer,
+    .logo-diamond-inner {
+      width: 112px;
+      height: 112px;
+    }
+    
+    .logo-icon {
+      font-size: 64px;
+    }
+  }
